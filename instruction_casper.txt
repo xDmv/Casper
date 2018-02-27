@@ -1,0 +1,20 @@
+Инструкция для работы с Casper, буду писать что и как работает:
+
+1. Запуск скрипта:
+  $ casperjs имя файла.js
+
+Команды в скрипте:
+2. Отображение url на котром находится каспер + отображает чито написано в title
+casper.then(function() {
+    this.echo('Page url: ' + this.getCurrentUrl());
+    this.echo('Page title: ' + this.getTitle());
+});
+
+3. Нажатие на кнопку по классу или id кнопки:
+  casper.thenClick('.fa-key');
+
+4. Чтоб узнать есть ли селектор или Id:
+  this.exists('');
+
+5. Чтоб узнать что там написано в селекторе или id:
+  this.fetchText('h1');
