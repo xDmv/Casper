@@ -23,6 +23,17 @@ casper.start('https://test-front.ex-crypto.me/registration', function() {
 // регестрация делаем регистрацию email: avtospam1@gmail.com password: DimaOk5#!
 
 this.echo('checked: ' + this.fetchText('div.float-form.form-group.login-cont.agreement-group.col-sm-12.has-error'));
+
+  casper.then(function(){
+    this.test.assertExists('#RegistrationForm_offerta');
+    this.click('#RegistrationForm_offerta');
+    this.wait(100, function() {
+      this.test.assert(this.evaluate(function () {
+        return document.getElementById('RegistrationForm_offerta').checked;
+      }));
+    });
+  });
+  
 /*
   this.test.assertExists('input#RegistrationForm_offerta');
   this.click('input#RegistrationForm_offerta');
@@ -36,6 +47,7 @@ this.echo('checked: ' + this.fetchText('div.float-form.form-group.login-cont.agr
   casper.capture('registration2.png');
   console.log('Сохранен скриншот: registration2.png');
 });
+
 
 
 /*
