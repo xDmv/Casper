@@ -1,3 +1,22 @@
+casper.start();
+
+casper.open('http://bestwatch.in.ua/');
+
+casper.then(function(){
+  this.test.assertExists('#coucou');
+  this.click('#coucou');
+  this.wait(100, function() {
+    this.test.assert(this.evaluate(function () {
+      return document.getElementById('coucou').checked;
+    }));
+  });
+});
+
+
+casper.run(function(){
+  this.test.done();
+
+});
 /*
 var casper = require("casper").create()
 
@@ -71,6 +90,7 @@ casper.then(function() {
 
 casper.run();
 */
+/*
 var casper = require("casper").create();
 
 casper.start('http://mobilka.net.ua/admin/', function() {
@@ -90,3 +110,4 @@ casper.thenClick('.fa-folder-open');
 // casper.thenClick('.fa-folder-open');
 
 casper.run();
+*/

@@ -18,3 +18,5 @@ casper.then(function() {
 
 5. Чтоб узнать что там написано в селекторе или id:
   this.fetchText('h1');
+
+6. 
